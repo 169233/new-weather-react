@@ -18,14 +18,14 @@ export default function Weather() {
   let [description, setDescription] = useState("");
   let [humidity, setHumidity] = useState("");
   let [wind, setWind] = useState("");
-  let [icon, setIcon] = useState("");
+ // let [icon, setIcon] = useState("");
 
   function showForecast(response) {
     setTemp(Math.round(response.data.main.temp));
     setHumidity(response.data.main.humidity);
     setWind(Math.round(response.data.wind.speed));
     setDescription(response.data.weather[0].description);
-    setIcon(response.data.weather[0].icon);
+   // setIcon(response.data.weather[0].icon);
   }
 
   function handleSubmit(event) {
@@ -58,12 +58,14 @@ export default function Weather() {
           <li>Description: {description}</li>
           <li>Humidity: {humidity} %</li>
           <li>Wind: {wind} km/h</li>
-          <li>      
-           <img src="http://openweathermap.org/img/wn/{icon}@2x.png "alt=""/>
-          </li>
         </ul>
       </div>
     </div>
   );
-}
+  }
+
+
+ //   <li>      
+ //          <img src="http://openweathermap.org/img/wn/{icon}@2x.png "alt=""/>
+  //        </li>
 
