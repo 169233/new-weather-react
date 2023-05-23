@@ -1,18 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Circles } from "react-loader-spinner";
 import "./Weather.css";
 
 export default function Weather() {
-    <Circles
-  height="80"
-  width="80"
-  color="#4fa94d"
-  ariaLabel="circles-loading"
-  wrapperStyle={{}}
-  wrapperClass=""
-  visible={true}
-/>
   let [city, setCity] = useState("");
   let [temp, setTemp] = useState("");
   let [description, setDescription] = useState("");
@@ -30,7 +20,7 @@ export default function Weather() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    let apiKey = "42776befd778795724824300403642a2";
+         let apiKey = "42776befd778795724824300403642a2";
     let unit = "metric";
     let headlineURL = "https://api.openweathermap.org/data/2.5/weather?";
     let url = `${headlineURL}q=${city}&appid=${apiKey}&units=${unit}`;
